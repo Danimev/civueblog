@@ -1,27 +1,50 @@
 <template>
   <div id="app">
-    Hola esto es Ci4 powered RESTapi SERVER
+    <app-nav></app-nav>
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Nav from "./components/Nav";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    appNav: Nav,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  background-color: #e1e1e1;
+}
+.form-wrapper {
+  border-radius: 7px;
+}
+.form-wrapper label {
+  font-weight: bold;
+}
+.errors li {
+  list-style: none;
+  width: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.errors ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .form-wrapper .text-right {
+    text-align: center !important;
+  }
+
+  .form-wrapper .btn-primary {
+    display: block;
+    margin: 0 auto;
+  }
 }
 </style>
